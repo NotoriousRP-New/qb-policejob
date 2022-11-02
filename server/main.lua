@@ -707,7 +707,7 @@ RegisterNetEvent('police:server:BillPlayer', function(playerId, price)
     if not Player or not OtherPlayer or Player.PlayerData.job.type ~= "leo" then return end
 
     OtherPlayer.Functions.RemoveMoney("bank", price, "paid-bills")
-    exports['qb-management']:AddMoney("police", price)
+    exports['Renewed-Banking']:addAccountMoney("police", price)
     TriggerClientEvent('ox_lib:notify', OtherPlayer.PlayerData.source, {description = Lang:t("info.fine_received", {fine = price})})
 end)
 
